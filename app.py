@@ -19,5 +19,12 @@ def get_students():
     conn.close()
     return jsonify([dict(s) for s in students])
 
+@app.route("/teachers")
+def get_teachers():
+    conn = get_db_connection()
+    teachers = conn.execute("SELECT * FROM teachers").fetchall()
+    conn.close()
+    return jsonify([dict(t) for t in teachers])
+
 if __name__ == "__main__":
     app.run(debug=True)
