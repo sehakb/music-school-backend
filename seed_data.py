@@ -19,6 +19,12 @@ cursor.execute("""
     VALUES (?, ?, ?, ?, ?, ?)
 """, ("Emre Koçak", "Drums", "555-5678", "active", teacher_id, date.today().isoformat()))
 
+# Ders ekle
+cursor.execute("""
+    INSERT INTO lessons (student_id, teacher_id, date, is_trial)
+    VALUES (?, ?, ?, ?)
+""", (1, teacher_id, date.today().isoformat(), True))
+
 conn.commit()
 conn.close()
 

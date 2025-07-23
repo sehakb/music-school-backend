@@ -26,5 +26,12 @@ def get_teachers():
     conn.close()
     return jsonify([dict(t) for t in teachers])
 
+@app.route("/lessons")
+def get_lessons():
+    conn = get_db_connection()
+    lessons = conn.execute("SELECT * FROM lessons").fetchall()
+    conn.close()
+    return jsonify([dict(l) for l in lessons])
+
 if __name__ == "__main__":
     app.run(debug=True)
