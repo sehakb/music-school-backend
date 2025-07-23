@@ -8,7 +8,6 @@ This is a backend API project built with Flask and SQLite for managing students,
 - Manage teachers
 - Track lesson sessions with date and trial flag
 - Trial lessons supported
-- Ready for containerization and CI/CD
 
 ## 📁 Tech Stack
 
